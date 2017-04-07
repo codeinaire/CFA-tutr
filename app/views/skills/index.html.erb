@@ -1,9 +1,10 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
-
-  <h1>Add A Skill</h1>
   <%= render 'indexform' %>
+</div>
 
+<div class="card">
+  <div class="card-content">
   <table class="table is-striped">
     <thead>
       <tr>
@@ -25,8 +26,9 @@
       <% end %>
     </tbody>
   </table>
+</div>
+</div>
 
   <br>
 
-  <%= link_to 'New Skill', new_skill_path %>
 </div>

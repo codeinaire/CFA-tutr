@@ -11,23 +11,33 @@
     </div>
   <% end %>
 
+<h1>Add A Skill</h1>
+  <div class="card">
+    <div class="card-content">
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
 
-  <div class="field">
-    <%= f.label :confident %>
-    <%= f.check_box :confident %>
-  </div>
+      <div class="field">
+        <%= f.label :confident %>
+        <%= f.check_box :confident %>
+      </div>
 
-  <div class="field">
-    <%= f.label :need_improvement %>
-    <%= f.check_box :need_improvement %>
-  </div>
+      <div class="field">
+        <%= f.label :need_improvement %>
+        <%= f.check_box :need_improvement %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+      </div>
+      </div>
+
+    </div>
+    <br>
+
+
 <% end %>
