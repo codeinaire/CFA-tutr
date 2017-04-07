@@ -12,10 +12,8 @@
 
 ActiveRecord::Schema.define(version: 20170407005004) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
@@ -55,8 +53,6 @@ ActiveRecord::Schema.define(version: 20170407005004) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-
   add_foreign_key "profiles", "users"
   add_foreign_key "skills", "users"
-
 end
