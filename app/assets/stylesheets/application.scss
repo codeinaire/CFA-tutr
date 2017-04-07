@@ -19,7 +19,18 @@
    height: 92.5vh;
  }
 
-.icon-button {
-  margin-left: 2em;
+ .body {
+   margin: 0px;
+   padding: 0px;
+   border: 0px;
+ }
+
+.card-content-create-skills{
+  padding-top: 30px;
+  text-align: center;
 }
-<%= link_to '<button type="button"></button>'.html_safe, profile_path %>
+
+.actions {
+padding-bottom: 40px;
+
+}
