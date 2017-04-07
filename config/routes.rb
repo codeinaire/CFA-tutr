@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :profiles
   resources :skills
-
+  resources :badges
   devise_for :users
   root 'pages#index'
 
