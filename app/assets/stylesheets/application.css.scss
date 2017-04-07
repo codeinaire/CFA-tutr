@@ -14,3 +14,19 @@
  *= require_self
  */
  @import "bulma";
+
+ .body {
+   margin: 0px;
+   padding: 0px;
+   border: 0px;
+ }
+
+.card-content-create-skills{
+  padding-top: 30px;
+  text-align: center;
+}
+
+.actions {
+padding-bottom: 40px;
+
+}
