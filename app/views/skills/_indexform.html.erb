@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-<h1>Add A Skill</h1>
   <div class="card">
-    <div class="card-content">
+    <div class="card-content-create-skills">
+      <h1> ADD SKILL </h1><br>
 
       <div class="field">
         <%= f.label :name %>
@@ -32,12 +32,36 @@
 
       <div class="actions">
         <%= f.submit %>
-      </div>
-      </div>
-      </div>
-
     </div>
-    <br>
+  </div>
+</div>
 
 
+    <div class="card">
+      <div class="card-content table">
+    <table class="table is-striped">
+      <thead>
+        <tr>
+          <th>Skill</th>
+          <th>Confident</th>
+          <th>Need Improvement</th>
+          <th colspan="1"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% @skills.each do |skill| %>
+        <tr>
+          <td><%= skill.name %></td>
+          <td><%= convert_boolean(skill.confident) %></td>
+          <td><%= convert_boolean(skill.need_improvement) %></td>
+          <td><%= link_to 'Delete', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
 <% end %>
