@@ -14,3 +14,12 @@
  *= require_self
  */
  @import "bulma";
+
+ .height-profile {
+   height: 92.5vh;
+ }
+
+.icon-button {
+  margin-left: 2em;
+}
+<%= link_to '<button type="button"></button>'.html_safe, profile_path %>
