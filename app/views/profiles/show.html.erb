@@ -1,28 +1,56 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <%= image_tag(@profile.avatar.url) %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @profile.username %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<!-- <div class="section"> -->
+<div class="container height-profile">
+  <div class="tile is-ancestor height-profile">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <figure class="image is-4by3">
+              <%= image_tag(@profile.avatar.url, :size => "260x180") %>
+            </figure>
+          </article>
+        </div>
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-primary">
+            <!-- <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Component
+                </p>
+              </header>
+            </div> -->
+            <p class="title"><%= @profile.name %></p>
+            <p class="subtitle">  <%= @profile.username %></p>
+            <p class="subtitle">  some catchy line</p>
+          </article>
+          <article class="tile is-child notification is-warning">
+            <!-- <p class="title">...tiles</p> -->
+            <p class="subtitle">I love to learn new stuff about things</p>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-danger">
+          <p class="title">About me</p>
+          <p class="subtitle"><%= @profile.bio %></p>
+          <div class="content">
+            <!-- Content -->
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-success">
+        <div class="content">
+          <p class="title">Badges</p>
+          <p class="subtitle">this is where we'll put the badges</p>
+          <div class="content">
+            <!-- Content -->
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+</div>
+</section>

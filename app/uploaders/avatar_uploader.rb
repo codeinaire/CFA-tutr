@@ -1,6 +1,7 @@
 class AvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
+  # UNCOMMENT TO USE RMagick
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
@@ -27,6 +28,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #
   # def scale(width, height)
   #   # do something
+  # end
+  # UNCOMMENT TO USE RMAGICK
+  # version :thumb do
+  #   process resize_to_fill: [200,200]
   # end
 
   # Create different versions of your uploaded files:
