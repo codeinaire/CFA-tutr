@@ -25,10 +25,11 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @profile.id = current_user.id
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.html { redirect_to profile(@profile.id), notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -40,9 +41,11 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    @profile.id = current_user.id
+
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+        format.html { redirect_to profile_path(@profile.id), notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit }
@@ -69,6 +72,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :username, :bio, :user_id)
+      params.require(:profile).permit(:name, :username, :bio, :user_id, :avatar)
     end
 end
