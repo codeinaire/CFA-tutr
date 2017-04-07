@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem "bulma-rails", "~> 0.4.0"
 
 gem 'carrierwave', '~> 1.0'
 
