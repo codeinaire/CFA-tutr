@@ -25,9 +25,14 @@
           <%= image_tag(current_user.profile.avatar.url) %>
         </span>
         <span><%= link_to current_user.profile.name, profile_path(current_user.profile.id), class:"button is-primary" %></span>
+        <span class="icon icon-button"><%= link_to "Log out", destroy_user_session_path, method: :delete%></span>
       </a>
-      <% end %>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path, class:"button is-primary" %>
+
+
     </span>
+    <% end %>
   </div>
 </nav>
 </div>
