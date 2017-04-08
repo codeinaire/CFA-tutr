@@ -8,9 +8,5 @@ class ApplicationController < ActionController::Base
     else
       profile_path(current_user.profile.id)
     end
-    # @profile = Profile.find(params[:id])
-    # @profile.id = current_user.id
-    # profile_path(@profile.id)
-    # profile_path(current_user.id)
   end
 end
