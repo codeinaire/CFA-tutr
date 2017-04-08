@@ -20,21 +20,32 @@
   <div class="nav-right nav-menu">
     <span class="nav-item">
       <% if user_signed_in? %>
-      <span class="nav-item">
+      <div class="nav-item">
+        <a>
+          <span>
+            <%= link_to "Badges", badges_path, class: "button" %>
+          </span>
+        </a> &nbsp;
+        <a>
+          <span>
+            <%= link_to "Skills", skills_path, class: "button" %>
+          </span>
+        </a> &nbsp;
         <a class="button" >
           <span class="icon">
-              <%= image_tag(current_user.profile.avatar.url) %>
+              <%= image_tag(current_user.profile.avatar.url) %> 
           </span>
+        <a>
           <span>
             <%= link_to current_user.profile.name, profile_path(current_user.profile.id), class: "button m_pink" %>
           </span>
-        </a>
+        </a> &nbsp;
         <a>
           <span>
             <%= link_to "Log out", destroy_user_session_path, class: "button", method: :delete%>
           </span>
         </a>
-      </span>
+      </div>
 
       </a>
       <% else %>
