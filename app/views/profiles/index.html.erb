@@ -2,34 +2,47 @@
 
 <h1>Profiles</h1>
 <div class="container">
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Username</th>
-      <th>Bio</th>
-      <th>User</th>
-      <th>Skills</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.name %></td>
-        <td><%= profile.username %></td>
-        <td><%= profile.bio %></td>
-        <td><%= profile.user.email %></td>
-        <td><% profile.user.skills.each do |skill| %>
-          <p><%= skill.name %></p>
-          <% end %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <% @profiles.each do |profile| %>
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image is-64x64">
+              <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+                <h3><%= profile.name %></h3>
+                <h4>Confident</h4>
+                <% profile.user.skills.each do |skill| %>
+                  <% if skill.confident %>
+                    <p><%= skill.name %></p>
+                  <% end %>
+                <% end %>
+                <h4>Needs Improvement</h4>
+                <% profile.user.skills.each do |skill| %>
+                  <% if skill.need_improvement %>
+                    <p><%= skill.name %></p>
+                  <% end %>
+                <% end %>
+                <% profile.badges.each do |badge| %>
+                  <p><%= image_tag(badge.image) %></p>
+                <% end %>
+            </div>
+          </div>
+          <div class="media-right">
+            <p><button class="button">
+              Offer help
+            </button></p>
+            <p><button class="button">
+              Request help
+            </button></p>
+          </div>
+        </article>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-<br>
-
-<%= link_to 'New Profile', new_profile_path %>
