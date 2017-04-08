@@ -1,17 +1,17 @@
-<!-- <div class="section"> -->
-<div class="container height-profile">
+<div class="section d_blue">
+<div class="container height-profile has-text-center">
   <div class="tile is-ancestor height-profile">
     <div class="tile is-vertical is-8">
       <div class="tile">
         <div class="tile is-parent">
           <article class="tile is-child notification is-info">
-            <figure class="image is-4by3">
-              <%= image_tag(@profile.avatar.url, :size => "260x180") %>
+            <figure class="image is-1by1 has-text-centered">
+              <%= image_tag(@profile.avatar.url) %>
             </figure>
           </article>
         </div>
         <div class="tile is-parent is-vertical">
-          <article class="tile is-child notification is-primary">
+          <article class="tile is-child notification l_blue">
             <!-- <div class="card">
               <header class="card-header">
                 <p class="card-header-title">
@@ -23,14 +23,14 @@
             <p class="subtitle">  <%= @profile.username %></p>
             <p class="subtitle">  some catchy line</p>
           </article>
-          <article class="tile is-child notification is-warning">
+          <article class="tile is-child notification l_blue">
             <!-- <p class="title">...tiles</p> -->
-            <p class="subtitle">I love to learn new stuff about things</p>
+            <p class="subtitle">this is where we'll put the skills tags</p>
           </article>
         </div>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child notification is-danger">
+        <article class="tile is-child notification l_blue">
           <p class="title">About me</p>
           <p class="subtitle"><%= @profile.bio %></p>
           <div class="content">
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div class="tile is-parent">
-      <article class="tile is-child notification is-success">
+      <article class="tile is-child notification l_blue">
         <div class="content">
           <p class="title">Badges</p>
           <p class="subtitle">this is where we'll put the badges</p>

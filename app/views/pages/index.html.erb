@@ -1,7 +1,7 @@
-<div class="hero-body">
+<div class="hero-body d_blue">
   <div class="container has-text-centered">
     <h1 class="title is-2">Welcome to Tutr</h1>
-    <h2 class="subtitle">Sign in</h2>
+    <!-- <h2 class="subtitle">Sign in</h2> -->
 
     <div class="columns">
       <div class="column is-one-quarter"></div>
@@ -16,9 +16,9 @@
           <p class="control"><%= f.check_box :remember_me %> <%= f.label :remember_me, class:"checkbox" %></p>
         <% end %>
 
-        <p class="control"><%= f.submit "Sign in", class:"button is-primary" %></p>
+        <p><%= f.submit "Sign in", class:"button" %></p>
         <% end %>
-
+        <br>
         <p><%= link_to "Dont Have An Account? Sign Up", new_user_registration_path %></p>
 
       </div>
