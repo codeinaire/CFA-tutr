@@ -31,10 +31,10 @@
             <%= link_to "Skills", skills_path, class: "button" %>
           </span>
         </a> &nbsp;
-        <!-- <a class="button" >
+        <a class="button" >
           <span class="icon">
-              image_tag(current_user.profile.avatar.url) %> -->
-          <!-- </span> -->
+              <%= image_tag(current_user.profile.avatar.url) %> 
+          </span>
         <a>
           <span>
             <%= link_to current_user.profile.name, profile_path(current_user.profile.id), class: "button m_pink" %>
