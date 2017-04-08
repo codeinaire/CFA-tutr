@@ -15,6 +15,10 @@
  */
  @import "bulma";
 
+ // body {
+ //   background-color: #303f9f;
+ // }
+
  .height-profile {
    height: 92.5vh;
  }
@@ -33,4 +37,43 @@
 .actions {
 padding-bottom: 40px;
 
+}
+
+// PrOFILE PAGE
+
+.d_blue {
+  background-color: #303f9f;
+}
+
+.m_blue {
+  background-color: #3f51b5;
+}
+
+.l_blue {
+  background-color: #3273dc;
+}
+
+
+// NAVBAR
+
+.button {
+  background-color: #ff4081;
+  border: none;
+  color: white;
+}
+
+.button:hover {
+  // opacity: 1;
+  color: white;
+  box-shadow: 0 0 10px 1px #ff4081;
+  // h-shadow v-shadow blur spread color
+}
+
+#logo {
+  color: #ff4081; // medium pink
+  font-weight:800;
+}
+
+.hero, .is-info {
+  background-color: #303f9f;
 }
