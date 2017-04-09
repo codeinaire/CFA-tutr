@@ -20,6 +20,9 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    if current_user.profile.badges(name: "Profile").blank?
+      format.html { redirect_to profile_path, alert: 'You have been awarded a new Edited Profile badge!' }
+      Badge.create(profile_id: current_user.profile.id, name: "Profile", image: "profile.png")
   end
 
   # POST /profiles
