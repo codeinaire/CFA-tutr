@@ -23,21 +23,19 @@
       <div class="nav-item">
         <a>
           <span>
-            <%= link_to "Badges", badges_path, class: "button" %>
+              <%= link_to profile_path(current_user.profile.id) do %>
+                <%= image_tag(current_user.profile.avatar.url, class: "img-circular") %>&nbsp;&nbsp;
+              <% end %>
+              <% if current_user.profile.username == nil %>
+                <%= link_to current_user.email, profile_path(current_user.profile.id), class: "button m_pink"  %>
+              <% else %>
+                <%= link_to current_user.profile.username, profile_path(current_user.profile.id), class: "button m_pink" %>
+              <% end %>
           </span>
         </a> &nbsp;
         <a>
           <span>
             <%= link_to "Skills", skills_path, class: "button" %>
-          </span>
-        </a> &nbsp;
-        <a class="button" >
-          <span class="icon">
-              <%= image_tag(current_user.profile.avatar.url) %> 
-          </span>
-        <a>
-          <span>
-            <%= link_to current_user.profile.name, profile_path(current_user.profile.id), class: "button m_pink" %>
           </span>
         </a> &nbsp;
         <a>

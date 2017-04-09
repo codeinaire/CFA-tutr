@@ -11,10 +11,59 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="section d_blue">
+  <div class="container height-profile has-text-center">
+    <div class="tile is-ancestor height-profile">
+      <div class="tile is-vertical is-8">
+        <div class="tile">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <figure class="image is-1by1 has-text-centered">
+                <%= image_tag(@profile.avatar.url) %>
+              </figure>
+            </article>
+          </div>
+          <div class="tile is-parent is-vertical">
+            <article class="tile is-child notification l_blue">
+              <p class="title">
+                <div class="field">
+                  <%= f.label :name, class: "label" %>
+                  <%= f.text_field :name, class: "input" %>
+                </div>
+              </p>
+              <p class="subtitle">  <%= @profile.username %></p>
+              <p class="subtitle">  some catchy line</p>
+            </article>
+            <article class="tile is-child notification l_blue">
+              <p class="subtitle">this is where we'll put the skills tags</p>
+            </article>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification l_blue">
+            <p class="title">About me</p>
+            <p class="subtitle"><%= @profile.bio %></p>
+            <div class="content">
+              <!-- Content -->
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification l_blue">
+          <div class="content">
+            <p class="title">Badges</p>
+            <p class="subtitle">this is where we'll put the badges</p>
+            <div class="content">
+              <!-- Content -->
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
   </div>
+  </div>
+  </section>
 
   <div class="field">
     <%= f.label :username %>
