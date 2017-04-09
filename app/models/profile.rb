@@ -1,8 +1,8 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_many :badges, :dependent => :delete_all
 
   mount_uploader :avatar, AvatarUploader
-  has_many :badges, :dependent => :delete_all
 
   after_create :create_badge
 
