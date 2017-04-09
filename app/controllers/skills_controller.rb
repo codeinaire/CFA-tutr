@@ -29,7 +29,7 @@ class SkillsController < ApplicationController
     @skill.user_id = current_user.id
 
     respond_to do |format|
-      if @skill.save && current_user.profile.badges(name: "Skills").blank?
+      if @skill.save && current_user.profile.badges.count == 2
         format.html { redirect_to skills_path, alert: 'You have been awarded a new Added Skills badge!' }
         Badge.create(profile_id: current_user.profile.id, name: "Skills", image: "addskill.png")
         format.json { render :show, status: :created, location: skills_path }

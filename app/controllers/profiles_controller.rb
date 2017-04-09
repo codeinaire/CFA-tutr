@@ -43,7 +43,10 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1.json
   def update
     respond_to do |format|
-      if @profile.update(profile_params)
+      if @profile.update(profile_params) && current_user.profile.badges.count == 1
+        Badge.create(profile_id: current_user.profile.id, name: "Profile", image: "profile.png")
+        format.html { redirect_to profile_path(@profile.id), notice: 'You have been awarded a profile update badge!' }
+      elsif @profile.update(profile_params)
         format.html { redirect_to profile_path(@profile.id), notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
