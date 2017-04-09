@@ -73,8 +73,12 @@
         <article class="tile is-child notification l_blue">
           <div class="content">
             <p class="title">Badges Collection</p>
-            <div class="content">
-              <!-- Content -->
+            <!-- <div class="content"> -->
+            <% @profile.badges.each do |badge| %>
+              <figure class="image is-96x96">
+                <%= image_tag(badge.image) %>
+              </figure>
+            <% end %>
             </div>
           </div>
         </article>
