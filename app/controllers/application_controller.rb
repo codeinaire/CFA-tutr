@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if current_user.sign_in_count > 1
       skills_path
     else
-      profile_path(current_user.profile.id)
+      edit_profile_path(current_user.profile.id)
     end
   end
 end

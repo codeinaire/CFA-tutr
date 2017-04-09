@@ -14,6 +14,7 @@
  *= require_self
  */
  @import "bulma";
+ @import "navbar";
 
  // body {
  //   background-color: #303f9f;
@@ -29,7 +30,7 @@
    border: 0px;
  }
 
-.card-content-create-skills{
+.card-content-create-skills {
   padding-top: 30px;
   text-align: center;
 }
@@ -51,29 +52,4 @@ padding-bottom: 40px;
 
 .l_blue {
   background-color: #3273dc;
-}
-
-
-// NAVBAR
-
-.button {
-  background-color: #ff4081;
-  border: none;
-  color: white;
-}
-
-.button:hover {
-  // opacity: 1;
-  color: white;
-  box-shadow: 0 0 10px 1px #ff4081;
-  // h-shadow v-shadow blur spread color
-}
-
-#logo {
-  color: #ff4081; // medium pink
-  font-weight:800;
-}
-
-.hero, .is-info {
-  background-color: #303f9f;
 }

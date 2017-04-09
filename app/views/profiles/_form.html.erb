@@ -11,26 +11,76 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="section d_blue">
+  <div class="container height-profile has-text-center">
+    <div class="tile is-ancestor height-profile">
+      <div class="tile is-vertical is-8">
+        <div class="tile">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <figure class="image is-1by1 has-text-centered">
+                <div class="field">
+                  <%= f.file_field :avatar, class:"button" %>
+                </div>
+              </figure>
+            </article>
+          </div>
+          <div class="tile is-parent is-vertical">
+            <article class="tile is-child notification l_blue">
+              <p class="title">
+                <div class="field">
+                  <%= f.label :name, class: "label" %>
+                  <%= f.text_field :name, class: "input", placeholder: "Enter your name!" %>
+                </div>
+              </p>
+              <p class="subtitle">
+                <div class="field">
+                  <%= f.label :username, class: "label" %>
+                  <%= f.text_field :username, class: "input", placeholder: "Enter a username!" %>
+                </div>
+              </p>
+              <p class="subtitle">
+                <div class="field">
+                  <%= f.label :quote, class: "label" %>
+                  <%= f.text_field :quote, class: "input", placeholder: "Got a handle" %>
+                </div>
+              </p>
+            </article>
+            <article class="tile is-child notification l_blue">
+              <p class="subtitle">this is where we'll put the skills tags</p>
+            </article>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification l_blue">
+            <p class="title">About me</p>
+            <p class="subtitle">
+              <div class="field">
+                <%= f.label :bio, class: "label" %>
+                <%= f.text_area :bio, class: "input", placeholder: "Let us know a little about yourself! Your first badge is just one click away!" %>
+              </div>
+              <div class="actions">
+                <%= f.submit "GET THE BADGE!", class:"button" %>
+              </div>
+            </p>
+            <div class="content">
+              <!-- Content -->
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification l_blue">
+          <div class="content">
+            <p class="title">Badges Collection</p>
+            <div class="content">
+              <!-- Content -->
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
   </div>
-
-  <div class="field">
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-  </div>
-
-  <div class="field">
-    <%= f.file_field :avatar %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </section>
 <% end %>

@@ -1,0 +1,38 @@
+// NAVBAR
+
+.button {
+  background-color: #ff4081;
+  border: none;
+  color: white;
+}
+
+.button:hover {
+  // opacity: 1;
+  color: white;
+  box-shadow: 0 0 10px 1px #ff4081;
+  // h-shadow v-shadow blur spread color
+}
+
+#logo {
+  color: #ff4081; // medium pink
+  font-weight:800;
+}
+
+.hero, .is-info {
+  background-color: #303f9f;
+}
+
+.img-circular {
+ width: 3em;
+ border-radius: 50%;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+// margin-top: 1em;
+// padding: -1em;
+margin-bottom: -.5em;
+// margin-right: -.25em;
+}
+
+.nav-item img {
+  max-height: 3em;
+}

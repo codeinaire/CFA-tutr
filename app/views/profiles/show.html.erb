@@ -50,6 +50,8 @@
     <div class="tile is-parent">
       <article class="tile is-child notification l_blue">
         <div class="content">
+
+          <p class="title">Badges Collection</p>
           <p class="title">Badges</p>
           <p class="subtitle">this is where we'll put the badges</p>
           <% @profile.badges.each do |badge| %>
@@ -59,7 +61,7 @@
           <% end %>
 
           <div class="content">
-            <!-- Content -->
+            <%= render 'partials/badges' %>
           </div>
         </div>
       </article>

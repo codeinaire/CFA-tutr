@@ -8,10 +8,9 @@ class User < ApplicationRecord
   after_create :create_profile
 
   has_one :profile, :dependent => :delete
+  has_many :skills, :dependent => :destroy
 
   def create_profile
     Profile.create(user_id: id)
   end
-
-  has_many :skills, :dependent => :destroy
 end

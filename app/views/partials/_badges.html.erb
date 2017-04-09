@@ -1,9 +1,3 @@
-<div class="container">
-<h1>Your badges</h1>
-
-
-<% current_user.profile.badges.each do %>
-  <%= badge.name %>
+<% current_user.profile.badges.each do |badge| %>
+  <%= image_tag(badge.image, class: "img-circular") %>
 <% end %>
-
-</div>
