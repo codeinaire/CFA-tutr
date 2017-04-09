@@ -20,9 +20,6 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    if current_user.profile.badges(name: "Profile").blank?
-      format.html { redirect_to profile_path, alert: 'You have been awarded a new Edited Profile badge!' }
-      Badge.create(profile_id: current_user.profile.id, name: "Profile", image: "profile.png")
   end
 
   # POST /profiles
@@ -46,7 +43,10 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1.json
   def update
     respond_to do |format|
-      if @profile.update(profile_params)
+      if @profile.update(profile_params) && current_user.profile.badges(name: "Profile").blank?
+        Badge.create(profile_id: current_user.profile.id, name: "Profile", image: "profile.png")
+        format.html { redirect_to profile_path(@profile.id), notice: 'You have been awarded a profile update badge!' }
+      elsif @profile.update(profile_params)
         format.html { redirect_to profile_path(@profile.id), notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
