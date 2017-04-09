@@ -7,6 +7,6 @@ class Profile < ApplicationRecord
   after_create :create_badge
 
   def create_badge
-    Badge.create(profile_id: id, name:"Registered", image:"public/registered.jpg")
+    Badge.create(profile_id: id, name:"Registered", image:"registered.png")
   end
 end

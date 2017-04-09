@@ -50,7 +50,7 @@
     </thead>
     <tbody>
 
-      <% @skills.each do |skill| %>
+      <% current_user.skills.each do |skill| %>
         <tr>
           <td><%= skill.name %></td>
           <td><%= convert_boolean(skill.confident) %></td>

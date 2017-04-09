@@ -17,7 +17,23 @@
             <p class="subtitle">  some catchy line</p>
           </article>
           <article class="tile is-child notification l_blue">
-            <p class="subtitle">this is where we'll put the skills tags</p>
+            <p class="subtitle">Skills</p>
+            <div class="is-pulled-left">
+            <h4>Confident</h4>
+            <% @profile.user.skills.each do |skill| %>
+              <% if skill.confident %>
+                <span class="tag"><%= skill.name %></span>
+              <% end %>
+            <% end %><br />
+            </div>
+            <div class="is-pulled-right">  
+            <p><h4>Needs Improvement</h4></p>
+            <% @profile.user.skills.each do |skill| %>
+              <% if skill.need_improvement %>
+                <span class="tag"><%= skill.name %></span>
+              <% end %>
+            <% end %>
+            </div>
           </article>
         </div>
       </div>
@@ -36,6 +52,12 @@
         <div class="content">
           <p class="title">Badges</p>
           <p class="subtitle">this is where we'll put the badges</p>
+          <% @profile.badges.each do |badge| %>
+            <figure class="image is-64x64">
+              <%= image_tag(badge.image) %>
+            </figure>
+          <% end %>
+
           <div class="content">
             <!-- Content -->
           </div>
