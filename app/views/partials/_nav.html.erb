@@ -1,9 +1,9 @@
-<section class="hero is-info is-large">
+<section class="d_blue hero is-info is-large">
 <div class="hero-head">
 <nav class="nav">
   <div class="nav-left">
     <a class="nav-item">
-      <h1 class="title is-2"><strong>TÜTR</strong></h1>
+      <h1 class="title is-2 logo_txt_nav" id="logo"><%= link_to "TÜTR", root_path, class:"m_pink_text" %></h1>
     </a>
   </div>
 
@@ -20,17 +20,25 @@
   <div class="nav-right nav-menu">
     <span class="nav-item">
       <% if user_signed_in? %>
-      <a class="button is-primary">
-        <span class="icon icon-button">
-          <%= image_tag(current_user.profile.avatar.url) %>
-        </span>
-        <span><%= link_to current_user.profile.name, profile_path(current_user.profile.id), class:"button is-primary" %></span>
-        <span class="icon icon-button"><%= link_to "Log out", destroy_user_session_path, method: :delete%></span>
+      <span class="nav-item">
+        <a class="button" >
+          <span class="icon">
+              <%= image_tag(current_user.profile.avatar.url) %>
+          </span>
+          <span>
+            <%= link_to current_user.profile.name, profile_path(current_user.profile.id), class: "button m_pink" %>
+          </span>
+        </a>
+        <a>
+          <span>
+            <%= link_to "Log out", destroy_user_session_path, class: "button", method: :delete%>
+          </span>
+        </a>
+      </span>
+
       </a>
       <% else %>
-        <%= link_to "Sign In", new_user_session_path, class:"button is-primary" %>
-
-
+        <%= link_to "About", root_path, class:"button" %>
     </span>
     <% end %>
   </div>
