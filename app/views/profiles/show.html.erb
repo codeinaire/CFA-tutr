@@ -1,72 +1,92 @@
 <div class="section d_blue">
-<div class="container height-profile has-text-center">
-  <div class="tile is-ancestor height-profile">
-    <div class="tile is-vertical is-8">
-      <div class="tile">
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
-            <figure class="image is-1by1 has-text-centered">
-              <%= image_tag(@profile.avatar.url) %>
-            </figure>
-          </article>
+  <div class="container height-profile has-text-center">
+    <div class="tile is-ancestor height-profile">
+      <div class="tile is-vertical is-8">
+        <div class="tile">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <figure class="image is-1by1 has-text-centered">
+                <%= image_tag(@profile.avatar.url) %>
+              </figure>
+            </article>
+          </div>
+          <div class="tile is-parent is-vertical">
+            <article class="tile is-child notification l_blue">
+              <p class="title"><%= @profile.name %></p>
+              <p class="subtitle">  <%= @profile.username %></p>
+              <p class="subtitle"><%= @profile.quote %></p>
+            </article>
+            <article class="tile is-child notification l_blue">
+              <p class="subtitle">Skills</p>
+              <div class="is-pulled-left">
+              <h4>Confident</h4>
+              <% @profile.user.skills.each do |skill| %>
+                <% if skill.confident %>
+                  <span class="tag"><%= skill.name %></span>
+                <% end %>
+              <% end %><br />
+              </div>
+              <div class="is-pulled-right">
+              <p><h4>Needs Improvement</h4></p>
+              <% @profile.user.skills.each do |skill| %>
+                <% if skill.need_improvement %>
+                  <span class="tag"><%= skill.name %></span>
+                <% end %>
+              <% end %>
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="tile is-parent is-vertical">
+        <div class="tile is-parent">
           <article class="tile is-child notification l_blue">
-            <p class="title"><%= @profile.name %></p>
-            <p class="subtitle">  <%= @profile.username %></p>
-            <p class="subtitle">  some catchy line</p>
-          </article>
-          <article class="tile is-child notification l_blue">
-            <p class="subtitle">Skills</p>
-            <div class="is-pulled-left">
-            <h4>Confident</h4>
-            <% @profile.user.skills.each do |skill| %>
-              <% if skill.confident %>
-                <span class="tag"><%= skill.name %></span>
-              <% end %>
-            <% end %><br />
-            </div>
-            <div class="is-pulled-right">  
-            <p><h4>Needs Improvement</h4></p>
-            <% @profile.user.skills.each do |skill| %>
-              <% if skill.need_improvement %>
-                <span class="tag"><%= skill.name %></span>
-              <% end %>
-            <% end %>
+            <p class="title">About me</p>
+            <p class="subtitle"><%= @profile.bio %></p>
+            <div class="content">
+              <!-- Content -->
             </div>
           </article>
         </div>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child notification l_blue">
-          <p class="title">About me</p>
-          <p class="subtitle"><%= @profile.bio %></p>
           <div class="content">
-            <!-- Content -->
+
+            <p class="title">Badges Collection</p>
+            <% @profile.badges.each do |badge| %>
+              <figure class="image is-96x96">
+                <%= image_tag(badge.image) %>
+              </figure>
+            <% end %>
           </div>
         </article>
       </div>
     </div>
-    <div class="tile is-parent">
-      <article class="tile is-child notification l_blue">
-        <div class="content">
-
-          <p class="title">Badges Collection</p>
-          <p class="title">Badges</p>
-          <p class="subtitle">this is where we'll put the badges</p>
-          <% @profile.badges.each do |badge| %>
-            <figure class="image is-64x64">
-              <%= image_tag(badge.image) %>
-            </figure>
-          <% end %>
-
+  </div>
+  <div class="container">
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box l_blue">
+          <p class="title">Editing Features</p>
+          <%= link_to "Edit Profile", edit_profile_path, class: "button m_pink"  %>
           <div class="content">
-            <%= render 'partials/badges' %>
+            <p></p>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
+      <div class="tile is-parent is-6">
+        <article class="tile is-child box l_blue">
+          <p class="title">Future Features</p>
+          <div class="content">
+          </div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box l_blue">
+          <p class="title">Future Features</p>
+          <div class="content">
+          </div>
+        </article>
+      </div>
     </div>
   </div>
 </div>
-</div>
-</section>

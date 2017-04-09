@@ -11,38 +11,42 @@
     </div>
   <% end %>
 
-  <div class="card">
-    <div class="card-content-create-skills">
-      <h1> ADD SKILL </h1><br>
-
+  <div class="card m_blue">
+    <div class="card-content-create-skills m_blue">
+      <h1 class="title is-2">ADD SKILLS</h1>
+      <div class="columns">
+        <div class="column is-one-quarter"></div>
+        <div class="column login-box">
+          <div class="field">
+            <p><%= f.label :name, class: "label" %>
+            <%= f.text_field :name, class: "input", placeholder: "Enter skill name here!" %></p>
+          </div>
+        </div>
+        <div class="column is-one-quarter"></div>
+      </div>
       <div class="field">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= f.label :confident, class: "label" %>
+        <%= f.check_box :confident, class: "checkbox" %>
       </div>
 
       <div class="field">
-        <%= f.label :confident %>
-        <%= f.check_box :confident %>
-      </div>
-
-      <div class="field">
-        <%= f.label :need_improvement %>
-        <%= f.check_box :need_improvement %>
+        <%= f.label :need_improvement, class: "label" %>
+        <%= f.check_box :need_improvement, class: "checkbox" %>
       </div>
 
       <div class="actions">
-        <%= f.submit %>
+        <%= f.submit "Enter Skills", class: "button" %>
     </div>
   </div>
 </div>
 
 
-    <div class="card">
-      <div class="card-content table">
+    <div class="card m_blue">
+      <div class="card-content table m_blue">
     <table class="table is-striped">
-      <thead>
+      <thead class="l_blue">
         <tr>
-          <th>Skill</th>
+          <th class="skills_head">Skill</th>
           <th>Confident</th>
           <th>Need Improvement</th>
           <th colspan="1"></th>

@@ -19,6 +19,7 @@
   <!-- Add the modifier "is-active" to display it on mobile -->
   <div class="nav-right nav-menu">
     <span class="nav-item">
+      <!-- if a user is signed it there will be skills log out, profile button will be displayed  -->
       <% if user_signed_in? %>
       <div class="nav-item">
         <a>
@@ -26,11 +27,17 @@
               <%= link_to profile_path(current_user.profile.id) do %>
                 <%= image_tag(current_user.profile.avatar.url, class: "img-circular") %>&nbsp;&nbsp;
               <% end %>
+              <!-- if the user hasn't got a username their email address will be shown -->
               <% if current_user.profile.username == nil %>
                 <%= link_to current_user.email, profile_path(current_user.profile.id), class: "button m_pink"  %>
               <% else %>
                 <%= link_to current_user.profile.username, profile_path(current_user.profile.id), class: "button m_pink" %>
               <% end %>
+          </span>
+        </a> &nbsp;
+        <a>
+          <span>
+            <%= link_to "Get/Give", profiles_path, class: "button" %>
           </span>
         </a> &nbsp;
         <a>
