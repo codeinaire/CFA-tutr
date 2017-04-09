@@ -2,34 +2,46 @@
 
 <h1>Profiles</h1>
 <div class="container">
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Username</th>
-      <th>Bio</th>
-      <th>User</th>
-      <th>Skills</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.name %></td>
-        <td><%= profile.username %></td>
-        <td><%= profile.bio %></td>
-        <td><%= profile.user.email %></td>
-        <td><% profile.user.skills.each do |skill| %>
-          <p><%= skill.name %></p>
-          <% end %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <% @profiles.each do |profile| %>
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image is-64x64">
+              <%= image_tag profile.avatar.url %>
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+                <h3><%= profile.name %></h3>
+                <h4>Confident</h4>
+                <% profile.user.skills.each do |skill| %>
+                  <% if skill.confident %>
+                    <span class="tag"><%= skill.name %></span>
+                  <% end %>
+                <% end %><br />
+                <p><h4>Needs Improvement</h4></p>
+                <% profile.user.skills.each do |skill| %>
+                  <% if skill.need_improvement %>
+                    <span class="tag"><%= skill.name %></span>
+                  <% end %>
+                <% end %>
+            </div>
+          </div>
+          <div class="media-right">
+            <p><button class="button">
+              Offer help
+            </button></p>
+            <p>&nbsp;</p>
+            <p><button class="button">
+              Request help
+            </button></p>
+          </div>
+        </article>
+      </div>
+      <% end %>
+      <p></p>
+    </div>
+  </div>
 </div>
-<br>
-
-<%= link_to 'New Profile', new_profile_path %>
