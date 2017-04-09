@@ -16,6 +16,7 @@
  @import "bulma";
  @import "navbar";
 
+
  // body {
  //   background-color: #303f9f;
  // }
@@ -33,6 +34,7 @@
 .card-content-create-skills {
   padding-top: 30px;
   text-align: center;
+  color: white;
 }
 
 .actions {
@@ -52,4 +54,20 @@ padding-bottom: 40px;
 
 .l_blue {
   background-color: #3273dc;
+}
+
+// SKILLS PAGE
+
+.table thead th  {
+  color: white;
+}
+
+// profiles page
+
+.content h3 {
+  color: white;
+}
+
+.content h4 {
+  color: white;
 }
