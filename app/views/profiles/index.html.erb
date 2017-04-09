@@ -9,7 +9,7 @@
         <article class="media">
           <div class="media-left">
             <figure class="image is-64x64">
-              <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
+              <%= image_tag profile.avatar.url %>
             </figure>
           </div>
           <div class="media-content">
@@ -18,17 +18,14 @@
                 <h4>Confident</h4>
                 <% profile.user.skills.each do |skill| %>
                   <% if skill.confident %>
-                    <p><%= skill.name %></p>
+                    <span class="tag"><%= skill.name %></span>
                   <% end %>
-                <% end %>
-                <h4>Needs Improvement</h4>
+                <% end %><br />
+                <p><h4>Needs Improvement</h4></p>
                 <% profile.user.skills.each do |skill| %>
                   <% if skill.need_improvement %>
-                    <p><%= skill.name %></p>
+                    <span class="tag"><%= skill.name %></span>
                   <% end %>
-                <% end %>
-                <% profile.badges.each do |badge| %>
-                  <p><%= image_tag(badge.image) %></p>
                 <% end %>
             </div>
           </div>
@@ -36,6 +33,7 @@
             <p><button class="button">
               Offer help
             </button></p>
+            <p>&nbsp;</p>
             <p><button class="button">
               Request help
             </button></p>
@@ -43,6 +41,7 @@
         </article>
       </div>
       <% end %>
+      <p></p>
     </div>
   </div>
 </div>
