@@ -1,24 +1,37 @@
-# README
+# CFA-tutr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app that brings together 2 students so one can teach and the other can learn or vice-versa. The same student can be both tutor or tutoree.
 
-Things you may want to cover:
+## About the Project
 
-* Ruby version
+A group project given to the class to practice working as a team in an Agile teamwork environment. We were given 2 days to come up with a solution to one of three educational challenges. We choose: Hard to accommodate both students who are struggling and excelling in a classroom.
 
-* System dependencies
+Following the ideation process we moved through many ideas until we came up with an idea that inspired us. We choose a gamified student matching program as we thought it would be an incentive for students to both become tutors and to be tutored.
 
-* Configuration
+## Requirements
 
-* Database creation
+- Ruby 2.0 or later.
+- Devise.
+- Bulma.
 
-* Database initialization
+## Installation
 
-* How to run the test suite
+Clone the repo to computer then:
 
-* Services (job queues, cache servers, search engines, etc.)
+  `$ bundle`
 
-* Deployment instructions
 
-* ...
+### Extra stuff to do for program to run
+
+
+## Usage
+
+In terminal navigate to the cloned folder and run:
+
+  `$ rails s`
+
+In a browser:
+
+  `http://localhost:3000`
+
+## Known Bugs

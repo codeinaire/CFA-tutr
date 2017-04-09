@@ -49,6 +49,7 @@ group :development, :test do
   # testing
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'
+  gem 'pry'
 end
 
 group :development do
