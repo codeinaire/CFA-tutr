@@ -26,10 +26,14 @@ class SkillsController < ApplicationController
   # POST /skills.json
   def create
     @skill = Skill.new(skill_params)
-    @skill.user_id = current_user.id 
+    @skill.user_id = current_user.id
 
     respond_to do |format|
-      if @skill.save
+      if @skill.save && current_user.profile.badges(name: "Skills").blank?
+        format.html { redirect_to skills_path, alert: 'You have been awarded a new Added Skills badge!' }
+        Badge.create(profile_id: current_user.profile.id, name: "Skills", image: "addskill.png")
+        format.json { render :show, status: :created, location: skills_path }
+      elsif @skill.save
         format.html { redirect_to skills_path, notice: 'Skill was successfully created.' }
         format.json { render :show, status: :created, location: skills_path }
       else
